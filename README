@@ -1,0 +1,47 @@
+NAME
+    Text::Boilerplate - format a script's output without programming
+
+
+INSTALLATION
+
+        Unpack the distribution file, then from inside that directory
+        type:
+
+            perl Makefile.PL
+            make
+            make install
+
+
+DESCRIPTION
+
+    Boilerplates let you separate what a script does from what its
+    output looks like, using a simple mark-up language which is easy
+    for non- programmers to learn.  The boilerplate document can be
+    stored in a separate file, making maintenance far simpler.  Using
+    Boilerplates can make creating and maintaining dynamic web pages
+    and e-mail messages much easier.
+
+SYNOPSIS
+           use Text::Boilerplate;
+
+           # Create a Boilerplate from a text string
+           $boiler = new Text::Boilerplate $text;
+
+           # Create a Boilerplate by loading a file
+           $boiler = Text::Boilerplate->load($filename);
+
+           # Create a Boilerplate by loading from a filehandle
+           $boiler = Boilerplate->load(\*FILEHANDLE);
+
+           # Fill in all tags in a Boilerplate
+           print STDOUT $boiler->fill({
+               'Tag Name'  => $value,
+               'Tag Name2' => $value,
+           });
+
+VERSION NOTES:
+
+The current version of Boilerplate has been working well for me for the past few years. However, I've recently
+had an epiphany which will lead to its complete redesign. The above tags are guaranteed to work, though.
+
+
